@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMOSWEB - Premium E-commerce Platform</title>
+    <meta name="description" content="Your trusted online shopping destination for quality products">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="images/fmosweb-logo.png" alt="FMOSWEB" class="logo-img">
+                </a>
+
+                <!-- Search Bar - Desktop -->
+                <div class="search-container desktop-only">
+                    <form class="search-form" onsubmit="handleSearch(event)">
+                        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Navigation - Desktop -->
+                <nav class="nav desktop-only">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="categories.html" class="nav-link">Categories</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <button class="btn-ghost desktop-only" onclick="openAuthModal()">
+                        <i class="fas fa-user"></i>
+                        Account
+                    </button>
+
+                    <a href="cart.html" class="btn-ghost cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+
+                    <!-- Mobile menu button -->
+                    <button class="btn-ghost mobile-only" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <form class="search-form" onsubmit="handleSearch(event)">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <nav class="mobile-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="categories.html" class="nav-link">Categories</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <button class="nav-link" onclick="openAuthModal()">
+                        <i class="fas fa-user"></i>
+                        Account
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Content -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Premium Quality
+                        <span class="text-accent">Products</span>
+                        for Modern Living
+                    </h1>
+                    <p class="hero-description">
+                        Discover our curated collection of high-quality products designed to enhance your lifestyle. From
+                        electronics to fashion, we bring you the best at unbeatable prices.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="products.html" class="btn-primary">
+                            Shop Now
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="categories.html" class="btn-outline">
+                            View Categories
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="trust-text">
+                                <p class="trust-value">4.9/5</p>
+                                <p class="trust-label">Customer Rating</p>
+                            </div>
+                        </div>
+
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="trust-text">
+                                <p class="trust-value">Secure</p>
+                                <p class="trust-label">Payment</p>
+                            </div>
+                        </div>
+
+                        <div class="trust-item">
+                            <div class="trust-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="trust-text">
+                                <p class="trust-value">Free</p>
+                                <p class="trust-label">Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <img src="modern-e-commerce-hero-image-with-products-showcas.jpg" alt="Premium Products Showcase" class="hero-img">
+                    </div>
+
+                    <!-- Floating Cards -->
+                    <div class="floating-card floating-card-1">
+                        <div class="status-indicator green"></div>
+                        <span>1000+ Products</span>
+                    </div>
+
+                    <div class="floating-card floating-card-2">
+                        <div class="status-indicator amber"></div>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-description">
+                    Discover our handpicked selection of premium products that our customers love most
+                </p>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+
+            <div class="section-footer">
+                <a href="products.html" class="btn-outline">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <img src="images/fmosweb-logo.png" alt="FMOSWEB" class="footer-logo">
+                    <p class="footer-description">
+                        Your trusted e-commerce platform for premium quality products. We bring you the best shopping experience
+                        with secure payments and fast delivery.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="deals.html">Special Deals</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns & Exchanges</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Stay Connected</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@fmosweb.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp whatsapp-icon"></i>
+                            <a href="https://wa.me/8801309179246" target="_blank" class="whatsapp-link">+880 1309 179246</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/8801309179246?text=Hello! I need help with my order." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Us
+                    </a>
+
+                    <div class="newsletter">
+                        <h4 class="newsletter-title">Newsletter</h4>
+                        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                            <input type="email" placeholder="Your email" class="newsletter-input" required>
+                            <button type="submit" class="btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 FMOSWEB. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sign In</h3>
+                <button class="modal-close" onclick="closeAuthModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="handleAuth(event)">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Sign In</button>
+                </form>
+                <p class="auth-switch">
+                    Don't have an account? <a href="#" onclick="switchToSignUp()">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
